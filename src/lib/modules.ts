@@ -69,7 +69,7 @@ export const modules: Module[] = [
     difficulty: "intermediate",
     lessons: [
       { id: "concept", title: "MCP คืออะไร?", duration: "8 นาที", description: "แนวคิดและ Architecture" },
-      { id: "servers", title: "MCP Servers ที่มีอยู่", duration: "10 นาที", description: "GitHub, Filesystem, Web และอื่นๆ" },
+      { id: "servers", title: "MCP Servers ยอดนิยม", duration: "10 นาที", description: "GitHub, Filesystem, Brave Search และอื่นๆ" },
       { id: "custom", title: "สร้าง MCP Server เอง", duration: "12 นาที", description: "ขั้นตอนการสร้าง custom server" },
     ],
   },
@@ -93,12 +93,13 @@ export const modules: Module[] = [
     description: "ระบบที่ควบคุมการทำงานของ Claude Code ตั้งแต่ hooks, permissions จนถึง settings",
     icon: "⚙️",
     gradient: "from-pink-500 to-rose-600",
-    estimatedTime: "25 นาที",
+    estimatedTime: "35 นาที",
     difficulty: "advanced",
     lessons: [
       { id: "overview", title: "Harness คืออะไร?", duration: "7 นาที", description: "Lifecycle และ components" },
       { id: "hooks", title: "Hooks System", duration: "10 นาที", description: "PreToolUse, PostToolUse, SessionStart" },
       { id: "permissions", title: "Permissions & Settings", duration: "8 นาที", description: "การกำหนดสิทธิ์และ configuration" },
+      { id: "engineer", title: "Harness Engineering", duration: "10 นาที", description: "Production patterns, team config, CI/CD" },
     ],
   },
 ];
