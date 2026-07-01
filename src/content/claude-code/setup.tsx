@@ -71,7 +71,7 @@ const steps = [
         <div className="bg-slate-900 rounded-lg border border-slate-700 p-3 font-mono text-sm">
           <p className="text-green-400">✓ Welcome to Claude Code!</p>
           <p className="text-slate-400">Working directory: /my-project</p>
-          <p className="text-slate-400">Model: claude-sonnet-4-6</p>
+          <p className="text-slate-400">Model: claude-sonnet-5</p>
           <p className="text-violet-300 mt-2">&gt; How can I help you today?</p>
         </div>
         <p className="text-slate-400 text-sm mt-3">ลองพิมพ์: <code className="bg-slate-700 px-1 rounded">Explain this codebase</code></p>
