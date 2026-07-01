@@ -108,20 +108,20 @@ export default function TechniquesLesson() {
         <p className="text-slate-300 text-sm mb-4">{tech.explain}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="bg-slate-900 rounded-lg border border-red-500/30 p-3">
+          <div className="min-w-0 bg-slate-900 rounded-lg border border-red-500/30 p-3">
             <div className="flex items-center gap-2 mb-2">
               <ThumbsDown size={14} className="text-red-400" />
               <span className="text-red-300 text-xs font-semibold">ไม่ดี</span>
             </div>
-            <pre className="text-slate-300 text-sm font-mono whitespace-pre-wrap mb-2">{tech.bad}</pre>
+            <pre className="text-slate-300 text-sm font-mono whitespace-pre-wrap break-words mb-2">{tech.bad}</pre>
             <p className="text-slate-500 text-xs">{tech.badResult}</p>
           </div>
-          <div className="bg-slate-900 rounded-lg border border-green-500/30 p-3">
+          <div className="min-w-0 bg-slate-900 rounded-lg border border-green-500/30 p-3">
             <div className="flex items-center gap-2 mb-2">
               <ThumbsUp size={14} className="text-green-400" />
               <span className="text-green-300 text-xs font-semibold">ดีกว่า</span>
             </div>
-            <pre className="text-slate-300 text-sm font-mono whitespace-pre-wrap mb-2">{tech.good}</pre>
+            <pre className="text-slate-300 text-sm font-mono whitespace-pre-wrap break-words mb-2">{tech.good}</pre>
             <p className="text-slate-500 text-xs">{tech.goodResult}</p>
           </div>
         </div>
