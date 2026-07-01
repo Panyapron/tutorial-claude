@@ -46,8 +46,8 @@ export default function Playground() {
     <main className="pt-24 pb-20 px-4">
       <div className="max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Prompt Playground</h1>
-          <p className="text-slate-400">สร้างและทดสอบ prompt เรียนรู้โครงสร้างของ prompt ที่ดี</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">Prompt Playground</h1>
+          <p className="text-slate-400 text-sm sm:text-base">สร้างและทดสอบ prompt เรียนรู้โครงสร้างของ prompt ที่ดี</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -60,9 +60,9 @@ export default function Playground() {
                 className="w-full flex items-center justify-between p-4 text-sm font-medium text-slate-300 hover:text-white transition-colors"
               >
                 <span className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-violet-500" />
+                  <span className="w-2 h-2 rounded-full bg-violet-500 flex-shrink-0" />
                   System Prompt
-                  <span className="text-xs text-slate-500 font-normal">(กำหนดบุคลิกของ Claude)</span>
+                  <span className="text-xs text-slate-500 font-normal hidden sm:inline">(กำหนดบุคลิกของ Claude)</span>
                 </span>
                 <span className="text-slate-500">{showSystem ? "▲" : "▼"}</span>
               </button>
