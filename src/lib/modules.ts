@@ -116,6 +116,20 @@ export const modules: Module[] = [
       { id: "agent-sdk", title: "Claude Agent SDK", duration: "12 นาที", description: "สร้าง custom agent ด้วยโค้ดของคุณเอง" },
     ],
   },
+  {
+    id: "cowork",
+    title: "Claude Cowork",
+    description: "พื้นที่ทำงานร่วมกับ Claude บนเว็บ สำหรับทุกตำแหน่งงาน ไม่ใช่แค่ developer",
+    icon: "🤝",
+    gradient: "from-sky-500 to-indigo-600",
+    estimatedTime: "20 นาที",
+    difficulty: "beginner",
+    lessons: [
+      { id: "what-is-cowork", title: "Cowork คืออะไร?", duration: "6 นาที", description: "ต่างจาก Claude.ai และ Claude Code อย่างไร" },
+      { id: "roles-and-plugins", title: "Role & Plugin Marketplace", duration: "7 นาที", description: "เลือกบทบาทแล้วรับ plugin ที่เหมาะสม" },
+      { id: "team-workflows", title: "ใช้งานเป็นทีม", duration: "7 นาที", description: "Use case ตามแผนก และ best practices" },
+    ],
+  },
 ];
 
 export function getModule(id: string) {
