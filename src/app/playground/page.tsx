@@ -43,53 +43,54 @@ export default function Playground() {
   ];
 
   return (
-    <main className="pt-24 pb-20 px-4">
+    <main className="pt-24 pb-24 px-4 bg-apple-bg min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">Prompt Playground</h1>
-          <p className="text-slate-400 text-sm sm:text-base">สร้างและทดสอบ prompt เรียนรู้โครงสร้างของ prompt ที่ดี</p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 text-center">
+          <p className="apple-eyebrow text-apple-gray mb-3">Workshop</p>
+          <h1 className="apple-headline text-3xl sm:text-5xl text-apple-ink mb-3">Prompt Playground</h1>
+          <p className="text-apple-gray text-sm sm:text-base">สร้างและทดสอบ prompt เรียนรู้โครงสร้างของ prompt ที่ดี</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left: Builder */}
+          {/* Left: Builder — dark panels */}
           <div className="lg:col-span-2 space-y-4">
             {/* System Prompt */}
-            <div className="rounded-2xl bg-slate-900 border border-slate-800">
+            <div className="apple-card-dark">
               <button
                 onClick={() => setShowSystem(!showSystem)}
-                className="w-full flex items-center justify-between p-4 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="w-full flex items-center justify-between p-4 text-sm font-medium text-white/80 hover:text-white transition-colors"
               >
                 <span className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-violet-500 flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-violet-400 flex-shrink-0" />
                   System Prompt
-                  <span className="text-xs text-slate-500 font-normal hidden sm:inline">(กำหนดบุคลิกของ Claude)</span>
+                  <span className="text-xs text-white/40 font-normal hidden sm:inline">(กำหนดบุคลิกของ Claude)</span>
                 </span>
-                <span className="text-slate-500">{showSystem ? "▲" : "▼"}</span>
+                <span className="text-white/40">{showSystem ? "▲" : "▼"}</span>
               </button>
               {showSystem && (
                 <div className="px-4 pb-4">
                   <textarea
                     value={systemPrompt}
                     onChange={(e) => setSystemPrompt(e.target.value)}
-                    className="w-full h-24 p-3 rounded-xl bg-slate-800 border border-violet-500/20 text-slate-300 text-sm font-mono resize-none focus:outline-none focus:border-violet-500/50 transition-colors"
+                    className="w-full h-24 p-3 rounded-xl bg-black/30 border border-white/10 text-white/90 text-sm font-mono resize-none focus:outline-none focus:border-violet-400/50 transition-colors"
                   />
                 </div>
               )}
             </div>
 
             {/* User Message */}
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 p-4">
-              <div className="flex items-center gap-2 mb-3 text-sm font-medium text-slate-300">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <div className="apple-card-dark p-4">
+              <div className="flex items-center gap-2 mb-3 text-sm font-medium text-white/80">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 User Message
               </div>
               <textarea
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
-                className="w-full h-44 p-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 text-sm resize-none focus:outline-none focus:border-violet-500/50 transition-colors"
+                className="w-full h-44 p-3 rounded-xl bg-black/30 border border-white/10 text-white text-sm resize-none focus:outline-none focus:border-violet-400/50 transition-colors"
                 placeholder="พิมพ์ prompt ของคุณที่นี่..."
               />
-              <div className="flex items-center justify-between mt-2 text-xs text-slate-500">
+              <div className="flex items-center justify-between mt-2 text-xs text-white/40">
                 <span>{charCount} characters</span>
                 <span>≈ {tokenEstimate} tokens</span>
               </div>
@@ -100,17 +101,17 @@ export default function Playground() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="rounded-2xl bg-slate-900 border border-slate-800 p-5"
+                className="apple-card-dark p-5"
               >
                 <h3 className="font-semibold text-white mb-4">การวิเคราะห์ Prompt</h3>
                 <div className="space-y-3">
                   {scores.map((item) => (
                     <div key={item.label}>
                       <div className="flex justify-between text-sm mb-1">
-                        <span className="text-slate-400">{item.label}</span>
-                        <span className="text-slate-300">{Math.round(item.score)}%</span>
+                        <span className="text-white/50">{item.label}</span>
+                        <span className="text-white/80">{Math.round(item.score)}%</span>
                       </div>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${item.score}%` }}
@@ -122,7 +123,7 @@ export default function Playground() {
                   ))}
                 </div>
                 {charCount < 40 && (
-                  <p className="mt-4 text-xs text-amber-400 bg-amber-400/10 border border-amber-400/20 rounded-lg p-3">
+                  <p className="mt-4 text-xs text-amber-300 bg-amber-400/10 border border-amber-400/20 rounded-lg p-3">
                     💡 เพิ่ม context และรายละเอียดเพื่อให้ Claude ตอบได้แม่นยำขึ้น
                   </p>
                 )}
@@ -130,30 +131,30 @@ export default function Playground() {
             )}
           </div>
 
-          {/* Right: Tips & Examples */}
+          {/* Right: Tips & Examples — light */}
           <div className="space-y-4">
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 p-5">
-              <h3 className="font-semibold text-white mb-4">ตัวอย่าง Prompt</h3>
+            <div className="apple-card-light p-5">
+              <h3 className="font-semibold text-apple-ink mb-4">ตัวอย่าง Prompt</h3>
               <div className="space-y-2">
                 {examples.map((ex) => (
                   <button
                     key={ex.label}
                     onClick={() => setPrompt(ex.prompt)}
-                    className="w-full text-left p-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-sm transition-colors border border-slate-700 hover:border-slate-600"
+                    className="w-full text-left p-3 rounded-xl bg-black/[0.03] hover:bg-black/[0.06] text-sm transition-colors border border-black/5"
                   >
-                    <span className="block font-medium text-violet-400 mb-1">{ex.label}</span>
-                    <span className="text-xs text-slate-500 line-clamp-2">{ex.prompt}</span>
+                    <span className="block font-medium text-apple-blue mb-1">{ex.label}</span>
+                    <span className="text-xs text-apple-gray line-clamp-2">{ex.prompt}</span>
                   </button>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 p-5">
-              <h3 className="font-semibold text-white mb-4">เทคนิค Prompt ที่ดี</h3>
+            <div className="apple-card-light p-5">
+              <h3 className="font-semibold text-apple-ink mb-4">เทคนิค Prompt ที่ดี</h3>
               <ul className="space-y-2">
                 {tips.map((tip, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
-                    <span className="text-violet-400 mt-0.5 flex-shrink-0">✓</span>
+                  <li key={i} className="flex items-start gap-2 text-sm text-apple-gray">
+                    <span className="text-apple-blue mt-0.5 flex-shrink-0">✓</span>
                     {tip}
                   </li>
                 ))}
