@@ -120,7 +120,7 @@ export const modules: Module[] = [
     id: "cowork",
     title: "Claude Cowork",
     description: "พื้นที่ทำงานร่วมกับ Claude บนเว็บ สำหรับทุกตำแหน่งงาน ไม่ใช่แค่ developer",
-    icon: "🤝",
+    icon: "🧑‍💼",
     gradient: "from-sky-500 to-indigo-600",
     estimatedTime: "20 นาที",
     difficulty: "beginner",
