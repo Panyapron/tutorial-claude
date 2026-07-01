@@ -8,116 +8,116 @@ export default function Home() {
   const totalLessons = modules.reduce((acc, m) => acc + m.lessons.length, 0);
 
   return (
-    <main className="min-h-screen">
-      {/* Hero */}
-      <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 overflow-hidden">
+    <main>
+      {/* Hero — black, full screen */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white px-4 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-60 -left-40 w-96 h-96 bg-purple-500/8 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-fuchsia-600/20 via-violet-600/20 to-blue-600/20 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-              สำหรับมือใหม่ ไม่ต้องมีพื้นฐาน
-            </span>
-          </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="apple-eyebrow text-white/50 mb-6 relative text-center"
+        >
+          Learn Claude · เรียนรู้แบบเข้าใจง่าย
+        </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
-          >
-            เรียนรู้{" "}
-            <span className="gradient-text">Claude</span>
-            <br />
-            แบบเข้าใจง่าย
-          </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="apple-headline text-center text-[2.75rem] sm:text-7xl md:text-8xl relative"
+        >
+          เรียนรู้ <span className="gradient-text">Claude</span>
+          <br />
+          แบบเข้าใจง่าย
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed px-2"
-          >
-            จาก Prompt พื้นฐาน ไปจนถึง MCP, Skills, Claude Code และ Harness
-            ด้วยภาพ visualize และตัวอย่างที่จับต้องได้
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-6 text-lg sm:text-2xl text-white/60 text-center max-w-2xl relative px-2"
+        >
+          จาก Prompt พื้นฐาน ไปจนถึง MCP, Skills, Claude Code, Harness และ Agent Orchestration
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap px-2"
-          >
-            <Link
-              href="/learn"
-              className="px-5 sm:px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white rounded-xl font-medium transition-all duration-200 shadow-lg shadow-violet-500/25 text-sm sm:text-base"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-10 flex items-center gap-6 flex-wrap justify-center relative"
+        >
+          <Link href="/learn" className="apple-pill bg-white text-black px-6 py-3 text-base hover:bg-white/90">
+            เริ่มเรียนเลย
+          </Link>
+          <Link href="/learn/overview/what-is-claude" className="text-base text-blue-400 hover:underline flex items-center gap-1">
+            Claude คืออะไร? <span>›</span>
+          </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-10 text-white/30 text-2xl"
+        >
+          ⌄
+        </motion.div>
+      </section>
+
+      {/* Stats strip — light */}
+      <section className="bg-apple-bg py-20 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
+          {[
+            { value: modules.length, label: "หัวข้อ" },
+            { value: totalLessons, label: "บทเรียน" },
+            { value: "100%", label: "ฟรี" },
+          ].map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
             >
-              เริ่มเรียนเลย →
-            </Link>
-            <Link
-              href="/learn/overview/what-is-claude"
-              className="px-5 sm:px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl font-medium transition-all duration-200 border border-slate-700 text-sm sm:text-base"
-            >
-              Claude คืออะไร?
-            </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-center flex-wrap gap-4 sm:gap-8 mt-12 sm:mt-14 text-sm text-slate-500"
-          >
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl sm:text-3xl font-bold text-white">{modules.length}</span>
-              <span>หัวข้อ</span>
-            </div>
-            <div className="w-px h-10 bg-slate-800 hidden sm:block" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl sm:text-3xl font-bold text-white">{totalLessons}</span>
-              <span>บทเรียน</span>
-            </div>
-            <div className="w-px h-10 bg-slate-800 hidden sm:block" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl sm:text-3xl font-bold text-white">100%</span>
-              <span>ฟรี</span>
-            </div>
-          </motion.div>
+              <div className="apple-headline text-4xl sm:text-6xl text-apple-ink">{s.value}</div>
+              <div className="mt-2 text-sm text-apple-gray">{s.label}</div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Learning Path */}
-      <section className="py-14 sm:py-20 px-4">
+      {/* Learning path — light */}
+      <section className="bg-apple-bg pb-20 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
+            className="text-center mb-14"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">เส้นทางการเรียนรู้</h2>
-            <p className="text-slate-400 text-sm sm:text-base">เรียงลำดับจากง่ายไปยาก สร้างความเข้าใจที่แน่น</p>
+            <p className="apple-eyebrow text-apple-gray mb-3">เส้นทางการเรียนรู้</p>
+            <h2 className="apple-headline text-3xl sm:text-5xl text-apple-ink">เรียงลำดับจากง่ายไปยาก</h2>
           </motion.div>
           <LearningPath />
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-14 sm:py-20 px-4 border-t border-slate-800/50">
+      {/* Features — dark */}
+      <section className="bg-black text-white py-24 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">ทำไมต้องเรียนรู้ Claude?</h2>
+            <h2 className="apple-headline text-3xl sm:text-5xl">ทำไมต้องเรียนรู้ Claude?</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { icon: "🎯", title: "Visual & Interactive", desc: "ทุกแนวคิดมาพร้อม diagram และ animation ที่เข้าใจได้ทันที" },
               { icon: "🚀", title: "ปฏิบัติได้จริง", desc: "ตัวอย่างและ workshop ที่นำไปใช้ได้จริง ไม่ใช่แค่ทฤษฎี" },
@@ -129,15 +129,23 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-slate-900 border border-slate-800 card-glow"
+                className="text-center"
               >
-                <div className="text-3xl mb-4">{f.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{f.title}</h3>
-                <p className="text-slate-400 text-sm">{f.desc}</p>
+                <div className="text-4xl mb-5">{f.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 tracking-tight">{f.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Final CTA — light */}
+      <section className="bg-apple-bg py-24 px-4 text-center">
+        <h2 className="apple-headline text-2xl sm:text-4xl text-apple-ink mb-6">พร้อมเริ่มต้นหรือยัง?</h2>
+        <Link href="/learn" className="apple-pill bg-black text-white px-7 py-3 text-base hover:bg-black/80 inline-flex">
+          สำรวจบทเรียนทั้งหมด
+        </Link>
       </section>
     </main>
   );
