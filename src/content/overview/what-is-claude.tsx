@@ -86,9 +86,9 @@ export default function WhatIsClaude() {
         <h3 className="text-xl font-semibold text-white mb-4">Claude มีหลายรุ่น</h3>
         <div className="space-y-3">
           {[
-            { name: "Claude Opus", desc: "รุ่นที่ฉลาดที่สุด เหมาะกับงานซับซ้อน", badge: "Most Capable", color: "bg-violet-500/20 text-violet-300" },
-            { name: "Claude Sonnet", desc: "สมดุลระหว่างความสามารถและความเร็ว", badge: "Recommended", color: "bg-emerald-500/20 text-emerald-300" },
-            { name: "Claude Haiku", desc: "เร็วที่สุดและราคาประหยัด", badge: "Fastest", color: "bg-blue-500/20 text-blue-300" },
+            { name: "Claude Opus 4.8", desc: "รุ่นที่ฉลาดที่สุด เหมาะกับงานซับซ้อนที่สุด", badge: "Most Capable", color: "bg-violet-500/20 text-violet-300" },
+            { name: "Claude Sonnet 5", desc: "สมดุลระหว่างความสามารถและความเร็ว ใช้งานได้หลากหลายที่สุด", badge: "Recommended", color: "bg-emerald-500/20 text-emerald-300" },
+            { name: "Claude Haiku 4.5", desc: "เร็วที่สุดและราคาประหยัด เหมาะกับงานที่ต้องการความไว", badge: "Fastest", color: "bg-blue-500/20 text-blue-300" },
           ].map((model, i) => (
             <motion.div
               key={model.name}
