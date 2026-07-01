@@ -102,6 +102,20 @@ export const modules: Module[] = [
       { id: "engineer", title: "Harness Engineering", duration: "10 นาที", description: "Production patterns, team config, CI/CD" },
     ],
   },
+  {
+    id: "agents",
+    title: "Agent Orchestration",
+    description: "มอบหมายงานให้ subagent ทำงานแบบขนานหรือแยกส่วน และสร้าง custom agent ด้วย Claude Agent SDK",
+    icon: "🤝",
+    gradient: "from-cyan-500 to-blue-600",
+    estimatedTime: "30 นาที",
+    difficulty: "advanced",
+    lessons: [
+      { id: "what-are-subagents", title: "Subagents คืออะไร?", duration: "8 นาที", description: "Task tool และการมอบหมายงาน" },
+      { id: "orchestration-patterns", title: "รูปแบบการทำงานร่วมกัน", duration: "10 นาที", description: "Sequential, Parallel, Isolated worktree" },
+      { id: "agent-sdk", title: "Claude Agent SDK", duration: "12 นาที", description: "สร้าง custom agent ด้วยโค้ดของคุณเอง" },
+    ],
+  },
 ];
 
 export function getModule(id: string) {
