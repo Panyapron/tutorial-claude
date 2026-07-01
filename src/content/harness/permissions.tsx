@@ -43,7 +43,7 @@ const settingsSections = [
     label: "model",
     desc: "เลือก Claude model ที่ใช้ใน session",
     color: "text-violet-400",
-    example: `"model": "claude-sonnet-4-6"`,
+    example: `"model": "claude-sonnet-5"`,
   },
   {
     key: "env",
@@ -119,7 +119,7 @@ export default function HarnessPermissions() {
           ))}
         </div>
         <p className="mt-3 text-sm text-slate-500">
-          ลำดับความสำคัญ: Local > Project > Global
+          ลำดับความสำคัญ: Local &gt; Project &gt; Global
         </p>
       </div>
 
