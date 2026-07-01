@@ -9,6 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        apple: {
+          bg: "#f5f5f7",
+          ink: "#1d1d1f",
+          gray: "#86868b",
+          dark: "#000000",
+          panel: "#111113",
+          blue: "#0071e3",
+        },
+      },
       animation: {
         "float": "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 3s ease-in-out infinite",
