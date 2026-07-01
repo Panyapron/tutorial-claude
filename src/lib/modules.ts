@@ -130,6 +130,21 @@ export const modules: Module[] = [
       { id: "team-workflows", title: "ใช้งานเป็นทีม", duration: "7 นาที", description: "Use case ตามแผนก และ best practices" },
     ],
   },
+  {
+    id: "notes",
+    title: "Claude x Networked Note-taking",
+    description: "ปูพื้นฐาน Networked Note-taking และใช้ Claude ช่วยสร้าง เชื่อมโยง และค้นหาความรู้ในระบบโนตของคุณ
+",
+    icon: "🕸️",
+    gradient: "from-fuchsia-500 to-rose-500",
+    estimatedTime: "20 นาที",
+    difficulty: "intermediate",
+    lessons: [
+      { id: "what-is-networked-notes", title: "Networked Note-taking คืออะไร?", duration: "7 นาที", description: "แนวคิด Zettelkasten, backlink และทำไมสำคัญ" },
+      { id: "connect-note-apps", title: "เชื่อม Claude กับแอพโน้ต", duration: "7 นาที", description: "MCP กับ Obsidian, Notion, Markdown vault" },
+      { id: "ai-assisted-workflows", title: "Workflow เสริมด้วย AI", duration: "6 นาที", description: "หาความเชื่อมโยง สร้าง backlink อัตโนมัติ" },
+    ],
+  },
 ];
 
 export function getModule(id: string) {
