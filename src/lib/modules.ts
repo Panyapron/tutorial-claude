@@ -133,8 +133,7 @@ export const modules: Module[] = [
   {
     id: "notes",
     title: "Claude x Networked Note-taking",
-    description: "ปูพื้นฐาน Networked Note-taking และใช้ Claude ช่วยสร้าง เชื่อมโยง และค้นหาความรู้ในระบบโนตของคุณ
-",
+    description: "ปูพื้นฐาน Networked Note-taking และใช้ Claude ช่วยสร้าง เชื่อมโยง และค้นหาความรู้ในระบบโน้ตของคุณ",
     icon: "🕸️",
     gradient: "from-fuchsia-500 to-rose-500",
     estimatedTime: "20 นาที",
