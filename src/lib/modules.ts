@@ -92,7 +92,7 @@ export const modules: Module[] = [
     title: "Skills & skill.md",
     description: "วิธีสร้าง slash commands และ instructions แบบกำหนดเองใน Claude Code",
     icon: "⚡",
-    gradient: "from-yellow-500 to-orange-500",
+    gradient: "from-amber-500 to-orange-600",
     estimatedTime: "20 นาที",
     difficulty: "intermediate",
     lessons: [
@@ -106,7 +106,7 @@ export const modules: Module[] = [
     title: "Claude x Networked Note-taking",
     description: "ปูพื้นฐาน Networked Note-taking และใช้ Claude ช่วยสร้าง เชื่อมโยง และค้นหาความรู้ในระบบโน้ตของคุณ",
     icon: "🕸️",
-    gradient: "from-fuchsia-500 to-rose-500",
+    gradient: "from-fuchsia-600 to-rose-700",
     estimatedTime: "20 นาที",
     difficulty: "intermediate",
     lessons: [
