@@ -23,11 +23,12 @@ export default async function ModulePage({ params }: Props) {
 
         {/* Module Header */}
         <div className={`p-10 rounded-[32px] bg-gradient-to-br ${module.gradient} mb-10 relative overflow-hidden text-white`}>
+          <div className="absolute inset-0 bg-black/25" />
           <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <div className="text-5xl mb-4 relative">{module.icon}</div>
-          <h1 className="apple-headline text-3xl sm:text-4xl mb-2 relative">{module.title}</h1>
-          <p className="text-white/80 relative">{module.description}</p>
-          <div className="flex items-center gap-4 mt-4 text-white/60 text-sm relative">
+          <div className="text-5xl mb-4 relative drop-shadow-md">{module.icon}</div>
+          <h1 className="apple-headline text-3xl sm:text-4xl mb-2 relative drop-shadow-md">{module.title}</h1>
+          <p className="text-white/90 relative">{module.description}</p>
+          <div className="flex items-center gap-4 mt-4 text-white/70 text-sm relative">
             <span>{module.estimatedTime}</span>
             <span>{module.lessons.length} บทเรียน</span>
           </div>
@@ -42,9 +43,10 @@ export default async function ModulePage({ params }: Props) {
               className="apple-card-light group flex items-center gap-4 p-5"
             >
               <div
-                className={`w-10 h-10 rounded-full bg-gradient-to-br ${module.gradient} flex items-center justify-center text-white font-bold flex-shrink-0`}
+                className={`w-10 h-10 rounded-full bg-gradient-to-br ${module.gradient} flex items-center justify-center text-white font-bold flex-shrink-0 relative overflow-hidden`}
               >
-                {i + 1}
+                <span className="absolute inset-0 bg-black/25" />
+                <span className="relative">{i + 1}</span>
               </div>
               <div className="flex-1">
                 <h3 className="font-medium text-apple-ink group-hover:text-apple-blue transition-colors">
