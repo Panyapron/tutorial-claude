@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { lessonLoaders } from "@/lib/lesson-loaders";
 
 interface Props {
   moduleId: string;
@@ -14,7 +15,15 @@ export default function LessonContent({ moduleId, lessonId }: Props) {
   useEffect(() => {
     setLoading(true);
     setNotFound(false);
-    import(`@/content/${moduleId}/${lessonId}`)
+
+    const loader = lessonLoaders[`${moduleId}/${lessonId}`];
+    if (!loader) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
+
+    loader()
       .then((mod) => {
         setContent(() => mod.default);
         setLoading(false);
