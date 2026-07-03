@@ -74,6 +74,20 @@ export const modules: Module[] = [
     ],
   },
   {
+    id: "mastery",
+    title: "ใช้ Claude ให้เก่งขึ้น",
+    description: "เทคนิคขั้นสูง: จัดการ context ด้วย CLAUDE.md ส่งรูปภาพ/ไฟล์ให้ Claude อ่าน และเปิดโหมด Extended Thinking",
+    icon: "🚀",
+    gradient: "from-lime-500 to-emerald-700",
+    estimatedTime: "20 นาที",
+    difficulty: "intermediate",
+    lessons: [
+      { id: "claude-md-context", title: "CLAUDE.md & Context Management", duration: "8 นาที", description: "เขียน CLAUDE.md ที่ดี และจัดการ context ด้วย /clear, /compact" },
+      { id: "multimodal", title: "ส่งรูปภาพและไฟล์ให้ Claude", duration: "6 นาที", description: "อ่าน screenshot, mockup, PDF และแปลงเป็นโค้ด" },
+      { id: "extended-thinking", title: "Extended Thinking", duration: "6 นาที", description: "โหมดคิดยาว เหมาะกับงานแบบไหน" },
+    ],
+  },
+  {
     id: "mcp",
     title: "MCP (Model Context Protocol)",
     description: "โปรโตคอลที่ช่วยให้ Claude เชื่อมต่อกับ tools และ data sources ภายนอกได้",
