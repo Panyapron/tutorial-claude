@@ -15,6 +15,10 @@ export const lessonLoaders: Record<string, () => Promise<LessonModule>> = {
   "claude-code/features": () => import("@/content/claude-code/features"),
   "claude-code/workflows": () => import("@/content/claude-code/workflows"),
 
+  "mastery/claude-md-context": () => import("@/content/mastery/claude-md-context"),
+  "mastery/multimodal": () => import("@/content/mastery/multimodal"),
+  "mastery/extended-thinking": () => import("@/content/mastery/extended-thinking"),
+
   "mcp/concept": () => import("@/content/mcp/concept"),
   "mcp/servers": () => import("@/content/mcp/servers"),
   "mcp/custom": () => import("@/content/mcp/custom"),
