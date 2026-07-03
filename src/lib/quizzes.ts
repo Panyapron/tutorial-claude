@@ -115,5 +115,143 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       ],
       correctIndex: 1
     }
+  ],
+  "claude-code": [
+    {
+      question: "คำสั่งใดใช้ติดตั้ง Claude Code?",
+      options: [
+        "npm install claude",
+        "npm install -g @anthropic-ai/claude-code",
+        "pip install claude-code",
+        "brew install claude"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ใดใน .claude/ ใช้เก็บ context ของโปรเจกต์?",
+      options: ["settings.json", "CLAUDE.md", "package.json", ".env"],
+      correctIndex: 1
+    },
+    {
+      question: "เครื่องมือใดใช้ค้นหา pattern ในโค้ด?",
+      options: ["Read", "Write", "Grep", "Bash"],
+      correctIndex: 2
+    },
+    {
+      question: "Workflow ไหนเหมาะกับการแก้ bug ที่ซ่อนอยู่ลึก?",
+      options: ["Code Review", "Bug Fix", "Refactor", "Test Generation"],
+      correctIndex: 1
+    }
+  ],
+  mastery: [
+    {
+      question: "คำสั่งใดใช้ล้าง context ทั้งหมดใน session?",
+      options: ["/compact", "/clear", "/reset-all", "/new"],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อใด \"ไม่ควร\" ใส่ใน CLAUDE.md?",
+      options: [
+        "เทคโนโลยีหลักที่ใช้",
+        "คำสั่งที่ใช้บ่อย",
+        "Secrets และ API keys",
+        "ข้อตกลงเรื่อง code style"
+      ],
+      correctIndex: 2
+    },
+    {
+      question: "Extended Thinking เหมาะกับงานแบบไหน?",
+      options: [
+        "ถามข้อมูลง่ายๆ เช่น syntax",
+        "โจทย์คณิตศาสตร์/ตรรกะหลายขั้นตอนที่ซับซ้อน",
+        "แชทสนทนาทั่วไป",
+        "งานที่ต้องการคำตอบเร็วที่สุด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Claude อ่านอะไรได้บ้างนอกจากข้อความ?",
+      options: [
+        "เฉพาะไฟล์ .txt เท่านั้น",
+        "รูปภาพ, screenshot, PDF",
+        "ไฟล์เสียงเท่านั้น",
+        "ไม่สามารถอ่านอะไรนอกจากข้อความ"
+      ],
+      correctIndex: 1
+    }
+  ],
+  mcp: [
+    {
+      question: "MCP ย่อมาจากอะไร?",
+      options: [
+        "Model Context Protocol",
+        "Machine Control Panel",
+        "Multi Cloud Platform",
+        "Model Compute Process"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "MCP เปรียบเสมือนอะไร?",
+      options: [
+        "ปลั๊กมาตรฐานแบบ USB-C",
+        "ฐานข้อมูลกลาง",
+        "ระบบปฏิบัติการ",
+        "ภาษาโปรแกรมมิ่งใหม่"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "MCP Primitive ใดใช้สำหรับ function call ที่มีผลกระทบต่อโลกภายนอก?",
+      options: ["Resources", "Tools", "Prompts", "Sessions"],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อใดคือ MCP server ที่ใช้เชื่อมต่อ GitHub?",
+      options: [
+        "server-filesystem",
+        "server-github",
+        "server-brave-search",
+        "server-postgres"
+      ],
+      correctIndex: 1
+    }
+  ],
+  skills: [
+    {
+      question: "Skill ใน Claude Code เรียกใช้งานผ่านอะไร?",
+      options: [
+        "Environment variable",
+        "Slash command (/skill-name)",
+        "Config file เพียงอย่างเดียว",
+        "Terminal alias"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ skill ควรเก็บไว้ที่โฟลเดอร์ใด?",
+      options: [
+        ".claude/commands/",
+        "src/skills/",
+        "node_modules/",
+        ".github/skills/"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "ตัวแปรใดใช้รับ argument ที่พิมพ์ตามหลัง slash command?",
+      options: ["$INPUT", "$ARGUMENTS", "$PARAMS", "$TEXT"],
+      correctIndex: 1
+    },
+    {
+      question: "การใช้ @ syntax ใน skill.md ทำอะไร?",
+      options: [
+        "ลบไฟล์อัตโนมัติ",
+        "อ้างอิงและอ่านไฟล์อื่นเข้ามาใน context",
+        "เรียก API ภายนอก",
+        "สร้าง comment ในโค้ด"
+      ],
+      correctIndex: 1
+    }
   ]
 };
