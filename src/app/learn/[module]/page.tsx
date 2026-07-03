@@ -1,6 +1,7 @@
 import { modules } from "@/lib/modules";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import QuizStatus from "@/components/QuizStatus";
 
 interface Props {
   params: Promise<{ module: string }>;
@@ -60,6 +61,12 @@ export default async function ModulePage({ params }: Props) {
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* Quiz CTA */}
+        <div className="mt-6">
+          <p className="apple-eyebrow text-apple-gray mb-3">ทดสอบความเข้าใจ</p>
+          <QuizStatus moduleId={module.id} gradient={module.gradient} />
         </div>
       </div>
     </main>
