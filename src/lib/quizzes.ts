@@ -253,5 +253,121 @@ export const quizzes: Record<string, QuizQuestion[]> = {
       ],
       correctIndex: 1
     }
+  ],
+  notes: [
+    {
+      question: "Networked Note-taking ต่างจากการจัดเก็บแบบโฟลเดอร์อย่างไร?",
+      options: [
+        "เก็บไฟล์เป็นลำดับชั้นเหมือนเดิม",
+        "โนตเชื่อมโยงกันได้อิสระ ไม่ขึ้นกับโครงสร้างลำดับชั้น",
+        "ใช้ได้แค่กับไฟล์ PDF",
+        "ไม่สามารถค้นหาได้"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Backlink คืออะไร?",
+      options: [
+        "การลบโนตอัตโนมัติ",
+        "เส้นทางย้อนกลับที่บอกว่าโนตนี้ถูกอ้างถึงจากไหนบ้าง",
+        "การเข้ารหัสโนต",
+        "ชื่อไฟล์สำรอง"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "แอพใดที่ยกตัวอย่างว่าเชื่อมต่อกับ Claude ผ่าน MCP ได้?",
+      options: ["Photoshop", "Obsidian", "Excel", "AutoCAD"],
+      correctIndex: 1
+    },
+    {
+      question: "Atomic Notes หมายถึงอะไร?",
+      options: [
+        "โนตที่มีหลายความคิดปนกัน",
+        "โนตที่เก็บแค่ 1 ความคิดต่อ 1 โนต",
+        "โนตที่เข้ารหัสไว้",
+        "โนตที่ลบไม่ได้"
+      ],
+      correctIndex: 1
+    }
+  ],
+  harness: [
+    {
+      question: "Claude Harness คืออะไร?",
+      options: [
+        "ตัวโมเดลภาษาของ Claude โดยตรง",
+        "ระบบที่ห่อหุ้ม Claude Code ควบคุมพฤติกรรมการทำงาน",
+        "เว็บไซต์ Claude.ai",
+        "ปลักอินสำหรับ VS Code เท่านั้น"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Hook ประเภทใดที่ทำงาน \"ก่อน\" Claude เรียกใช้ tool?",
+      options: ["PostToolUse", "PreToolUse", "SessionStart", "Stop"],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ settings ระดับใดที่ควร gitignore เพราะเก็บค่าเฉพาะเครื่อง?",
+      options: [
+        "~/.claude/settings.json (Global)",
+        ".claude/settings.json (Project)",
+        ".claude/settings.local.json (Local)",
+        "package.json"
+      ],
+      correctIndex: 2
+    },
+    {
+      question: "ใน permissions การเขียน \"deny\" กับ \"allow\" อันไหนมีความสำคัญสูงกว่า?",
+      options: [
+        "allow สำคัญกว่าเสมอ",
+        "deny สำคัญกว่าเสมอ",
+        "เท่ากันขึ้นอยู่กับลำดับ",
+        "ไม่มีผลต่อกัน"
+      ],
+      correctIndex: 1
+    }
+  ],
+  agents: [
+    {
+      question: "Subagent คืออะไร?",
+      options: [
+        "ปลั๊กอินเสริมของเบราว์เซอร์",
+        "Claude อีกตัวที่ถูก spawn ขึ้นมาเฉพาะงาน มี context แยกจากตัวหลัก",
+        "ระบบจัดเก็บไฟล์",
+        "โมเดลรุ่นเก่าของ Claude"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "รูปแบบ Parallel Fan-out เหมาะกับงานแบบใด?",
+      options: [
+        "งานที่ต้องรอผลลัพธ์ขั้นก่อนหน้าเสมอ",
+        "งานหลายชิ้นที่เป็นอิสระต่อกัน ไม่ต้องรอกัน",
+        "งานที่ต้องทำทีละคนเท่านั้น",
+        "งานที่ใช้ context เดียวกันทั้งหมด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "เหตุผลหลักที่ใช้ subagent คืออะไร?",
+      options: [
+        "เพื่อลดค่าใช้จ่ายเสมอ",
+        "เพื่อแยก context ไม่ให้ผลลัพธ์ที่ยาวทำให้ context หลักเต็ม",
+        "เพื่อเปลี่ยนภาษาที่ Claude ตอบ",
+        "เพื่อปิดการใช้ tools ทั้งหมด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Claude Agent SDK ใช้ทำอะไร?",
+      options: [
+        "ใช้แทน Claude.ai ในการแชท",
+        "สร้าง AI agent ของตัวเองด้วยโค้ด นอกเหนือจาก Claude Code",
+        "จัดการฐานข้อมูล",
+        "ออกแบบ UI"
+      ],
+      correctIndex: 1
+    }
   ]
 };
