@@ -10,6 +10,7 @@ export const lessonLoaders: Record<string, () => Promise<LessonModule>> = {
   "prompt/anatomy": () => import("@/content/prompt/anatomy"),
   "prompt/techniques": () => import("@/content/prompt/techniques"),
   "prompt/practice": () => import("@/content/prompt/practice"),
+  "prompt/marketing": () => import("@/content/prompt/marketing"),
 
   "claude-code/setup": () => import("@/content/claude-code/setup"),
   "claude-code/features": () => import("@/content/claude-code/features"),
