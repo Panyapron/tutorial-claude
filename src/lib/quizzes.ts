@@ -1,0 +1,373 @@
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctIndex: number;
+}
+
+export const quizzes: Record<string, QuizQuestion[]> = {
+  overview: [
+    {
+      question: "Context Window คืออะไร?",
+      options: [
+        "พื้นที่เก็บไฟล์ถาวรของ Claude",
+        "หน่วยความจำระยะยาวที่จำได้ข้ามทุก session",
+        "หน้าต่างที่ Claude มองเห็นข้อมูลทั้งหมดในครั้งนั้น",
+        "ระบบจัดการ permission ของเครื่องมือ"
+      ],
+      correctIndex: 2
+    },
+    {
+      question: "Claude รุ่นไหนที่สมดุลระหว่างความสามารถและความเร็ว?",
+      options: ["Claude Opus", "Claude Sonnet", "Claude Haiku", "Claude Fable"],
+      correctIndex: 1
+    },
+    {
+      question: "Claude ไม่ได้อ่านทีละตัวอักษร แต่แบ่งข้อความเป็นอะไร?",
+      options: ["Byte", "Token", "Pixel", "Frame"],
+      correctIndex: 1
+    },
+    {
+      question: "Claude Code เหมาะกับใครมากที่สุด?",
+      options: [
+        "ผู้ใช้ทั่วไปที่ต้องการแชท",
+        "Developer ที่ต้องการทำงานกับ codebase โดยตรง",
+        "นักออกแบบกราฟิก",
+        "ทีมการตลาด"
+      ],
+      correctIndex: 1
+    }
+  ],
+  prompt: [
+    {
+      question: "เทคนิค Chain-of-Thought คืออะไร?",
+      options: [
+        "ให้ตัวอย่าง input/output ก่อน",
+        "ให้ Claude คิดเป็นขั้นตอนก่อนสรุปคำตอบ",
+        "กำหนดบทบาทให้ Claude สวมใส่",
+        "จำกัดความยาวคำตอบ"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Prompt ที่ดีประกอบด้วยกี่ส่วนหลัก?",
+      options: ["2 ส่วน", "3 ส่วน", "4 ส่วน", "5 ส่วน"],
+      correctIndex: 1
+    },
+    {
+      question: "Role Prompting คือการทำอะไร?",
+      options: [
+        "ให้ตัวอย่าง 2-3 คู่ก่อนทำงานจริง",
+        "ระบุบทบาท/ความเชี่ยวชาญให้ Claude สวมใส่",
+        "จำกัด format คำตอบ",
+        "ให้คิดทีละขั้น"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อไหน \"ไม่ใช่\" เทคนิคเขียน prompt ที่ดี?",
+      options: [
+        "ระบุ format ที่ต้องการ",
+        "บอก context และเป้าหมาย",
+        "เขียนคำถามให้กำกวมที่สุด",
+        "ให้ตัวอย่างผลลัพธ์ที่ต้องการ"
+      ],
+      correctIndex: 2
+    }
+  ],
+  cowork: [
+    {
+      question: "Claude Cowork ต่างจาก Claude Code อย่างไร?",
+      options: [
+        "Cowork เป็น CLI สำหรับ developer เท่านั้น",
+        "Cowork เป็นพื้นที่ทำงานบนเว็บสำหรับทุกตำแหน่งงาน",
+        "Cowork ใช้แทน Claude.ai ไม่ได้",
+        "Cowork ไม่รองรับการเชื่อม repo"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "เมื่อเข้า Cowork ครั้งแรก ระบบจะให้ทำอะไร?",
+      options: [
+        "ติดตั้ง CLI ในเครื่อง",
+        "เลือกบทบาท/ตำแหน่งงานแล้วรับ plugin ที่เหมาะสม",
+        "สมัครบัตรเครดิต",
+        "ดาวน์โหลดแอพมือถือ"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "แผนก Legal ใช้ Cowork ทำอะไรได้บ้าง?",
+      options: [
+        "เขียนโค้ด React",
+        "สรุปสัญญาและเปรียบเทียบ redline",
+        "วิเคราะห์ CI log",
+        "ออกแบบกราฟิก"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อใดคือ best practice ของการใช้ Cowork เป็นทีม?",
+      options: [
+        "แชร์ API key ในแชทสาธารณะ",
+        "Subscribe การแจ้งเตือนและตั้ง check-in อัตโนมัติ",
+        "ปิดการแจ้งเตือนทั้งหมด",
+        "เปิดใช้ทุก tool โดยไม่จำกัด repo scope"
+      ],
+      correctIndex: 1
+    }
+  ],
+  "claude-code": [
+    {
+      question: "คำสั่งใดใช้ติดตั้ง Claude Code?",
+      options: [
+        "npm install claude",
+        "npm install -g @anthropic-ai/claude-code",
+        "pip install claude-code",
+        "brew install claude"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ใดใน .claude/ ใช้เก็บ context ของโปรเจกต์?",
+      options: ["settings.json", "CLAUDE.md", "package.json", ".env"],
+      correctIndex: 1
+    },
+    {
+      question: "เครื่องมือใดใช้ค้นหา pattern ในโค้ด?",
+      options: ["Read", "Write", "Grep", "Bash"],
+      correctIndex: 2
+    },
+    {
+      question: "Workflow ไหนเหมาะกับการแก้ bug ที่ซ่อนอยู่ลึก?",
+      options: ["Code Review", "Bug Fix", "Refactor", "Test Generation"],
+      correctIndex: 1
+    }
+  ],
+  mastery: [
+    {
+      question: "คำสั่งใดใช้ล้าง context ทั้งหมดใน session?",
+      options: ["/compact", "/clear", "/reset-all", "/new"],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อใด \"ไม่ควร\" ใส่ใน CLAUDE.md?",
+      options: [
+        "เทคโนโลยีหลักที่ใช้",
+        "คำสั่งที่ใช้บ่อย",
+        "Secrets และ API keys",
+        "ข้อตกลงเรื่อง code style"
+      ],
+      correctIndex: 2
+    },
+    {
+      question: "Extended Thinking เหมาะกับงานแบบไหน?",
+      options: [
+        "ถามข้อมูลง่ายๆ เช่น syntax",
+        "โจทย์คณิตศาสตร์/ตรรกะหลายขั้นตอนที่ซับซ้อน",
+        "แชทสนทนาทั่วไป",
+        "งานที่ต้องการคำตอบเร็วที่สุด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Claude อ่านอะไรได้บ้างนอกจากข้อความ?",
+      options: [
+        "เฉพาะไฟล์ .txt เท่านั้น",
+        "รูปภาพ, screenshot, PDF",
+        "ไฟล์เสียงเท่านั้น",
+        "ไม่สามารถอ่านอะไรนอกจากข้อความ"
+      ],
+      correctIndex: 1
+    }
+  ],
+  mcp: [
+    {
+      question: "MCP ย่อมาจากอะไร?",
+      options: [
+        "Model Context Protocol",
+        "Machine Control Panel",
+        "Multi Cloud Platform",
+        "Model Compute Process"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "MCP เปรียบเสมือนอะไร?",
+      options: [
+        "ปลั๊กมาตรฐานแบบ USB-C",
+        "ฐานข้อมูลกลาง",
+        "ระบบปฏิบัติการ",
+        "ภาษาโปรแกรมมิ่งใหม่"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "MCP Primitive ใดใช้สำหรับ function call ที่มีผลกระทบต่อโลกภายนอก?",
+      options: ["Resources", "Tools", "Prompts", "Sessions"],
+      correctIndex: 1
+    },
+    {
+      question: "ข้อใดคือ MCP server ที่ใช้เชื่อมต่อ GitHub?",
+      options: [
+        "server-filesystem",
+        "server-github",
+        "server-brave-search",
+        "server-postgres"
+      ],
+      correctIndex: 1
+    }
+  ],
+  skills: [
+    {
+      question: "Skill ใน Claude Code เรียกใช้งานผ่านอะไร?",
+      options: [
+        "Environment variable",
+        "Slash command (/skill-name)",
+        "Config file เพียงอย่างเดียว",
+        "Terminal alias"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ skill ควรเก็บไว้ที่โฟลเดอร์ใด?",
+      options: [
+        ".claude/commands/",
+        "src/skills/",
+        "node_modules/",
+        ".github/skills/"
+      ],
+      correctIndex: 0
+    },
+    {
+      question: "ตัวแปรใดใช้รับ argument ที่พิมพ์ตามหลัง slash command?",
+      options: ["$INPUT", "$ARGUMENTS", "$PARAMS", "$TEXT"],
+      correctIndex: 1
+    },
+    {
+      question: "การใช้ @ syntax ใน skill.md ทำอะไร?",
+      options: [
+        "ลบไฟล์อัตโนมัติ",
+        "อ้างอิงและอ่านไฟล์อื่นเข้ามาใน context",
+        "เรียก API ภายนอก",
+        "สร้าง comment ในโค้ด"
+      ],
+      correctIndex: 1
+    }
+  ],
+  notes: [
+    {
+      question: "Networked Note-taking ต่างจากการจัดเก็บแบบโฟลเดอร์อย่างไร?",
+      options: [
+        "เก็บไฟล์เป็นลำดับชั้นเหมือนเดิม",
+        "โนตเชื่อมโยงกันได้อิสระ ไม่ขึ้นกับโครงสร้างลำดับชั้น",
+        "ใช้ได้แค่กับไฟล์ PDF",
+        "ไม่สามารถค้นหาได้"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Backlink คืออะไร?",
+      options: [
+        "การลบโนตอัตโนมัติ",
+        "เส้นทางย้อนกลับที่บอกว่าโนตนี้ถูกอ้างถึงจากไหนบ้าง",
+        "การเข้ารหัสโนต",
+        "ชื่อไฟล์สำรอง"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "แอพใดที่ยกตัวอย่างว่าเชื่อมต่อกับ Claude ผ่าน MCP ได้?",
+      options: ["Photoshop", "Obsidian", "Excel", "AutoCAD"],
+      correctIndex: 1
+    },
+    {
+      question: "Atomic Notes หมายถึงอะไร?",
+      options: [
+        "โนตที่มีหลายความคิดปนกัน",
+        "โนตที่เก็บแค่ 1 ความคิดต่อ 1 โนต",
+        "โนตที่เข้ารหัสไว้",
+        "โนตที่ลบไม่ได้"
+      ],
+      correctIndex: 1
+    }
+  ],
+  harness: [
+    {
+      question: "Claude Harness คืออะไร?",
+      options: [
+        "ตัวโมเดลภาษาของ Claude โดยตรง",
+        "ระบบที่ห่อหุ้ม Claude Code ควบคุมพฤติกรรมการทำงาน",
+        "เว็บไซต์ Claude.ai",
+        "ปลักอินสำหรับ VS Code เท่านั้น"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Hook ประเภทใดที่ทำงาน \"ก่อน\" Claude เรียกใช้ tool?",
+      options: ["PostToolUse", "PreToolUse", "SessionStart", "Stop"],
+      correctIndex: 1
+    },
+    {
+      question: "ไฟล์ settings ระดับใดที่ควร gitignore เพราะเก็บค่าเฉพาะเครื่อง?",
+      options: [
+        "~/.claude/settings.json (Global)",
+        ".claude/settings.json (Project)",
+        ".claude/settings.local.json (Local)",
+        "package.json"
+      ],
+      correctIndex: 2
+    },
+    {
+      question: "ใน permissions การเขียน \"deny\" กับ \"allow\" อันไหนมีความสำคัญสูงกว่า?",
+      options: [
+        "allow สำคัญกว่าเสมอ",
+        "deny สำคัญกว่าเสมอ",
+        "เท่ากันขึ้นอยู่กับลำดับ",
+        "ไม่มีผลต่อกัน"
+      ],
+      correctIndex: 1
+    }
+  ],
+  agents: [
+    {
+      question: "Subagent คืออะไร?",
+      options: [
+        "ปลั๊กอินเสริมของเบราว์เซอร์",
+        "Claude อีกตัวที่ถูก spawn ขึ้นมาเฉพาะงาน มี context แยกจากตัวหลัก",
+        "ระบบจัดเก็บไฟล์",
+        "โมเดลรุ่นเก่าของ Claude"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "รูปแบบ Parallel Fan-out เหมาะกับงานแบบใด?",
+      options: [
+        "งานที่ต้องรอผลลัพธ์ขั้นก่อนหน้าเสมอ",
+        "งานหลายชิ้นที่เป็นอิสระต่อกัน ไม่ต้องรอกัน",
+        "งานที่ต้องทำทีละคนเท่านั้น",
+        "งานที่ใช้ context เดียวกันทั้งหมด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "เหตุผลหลักที่ใช้ subagent คืออะไร?",
+      options: [
+        "เพื่อลดค่าใช้จ่ายเสมอ",
+        "เพื่อแยก context ไม่ให้ผลลัพธ์ที่ยาวทำให้ context หลักเต็ม",
+        "เพื่อเปลี่ยนภาษาที่ Claude ตอบ",
+        "เพื่อปิดการใช้ tools ทั้งหมด"
+      ],
+      correctIndex: 1
+    },
+    {
+      question: "Claude Agent SDK ใช้ทำอะไร?",
+      options: [
+        "ใช้แทน Claude.ai ในการแชท",
+        "สร้าง AI agent ของตัวเองด้วยโค้ด นอกเหนือจาก Claude Code",
+        "จัดการฐานข้อมูล",
+        "ออกแบบ UI"
+      ],
+      correctIndex: 1
+    }
+  ]
+};
