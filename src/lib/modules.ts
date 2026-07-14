@@ -34,15 +34,16 @@ export const modules: Module[] = [
   {
     id: "prompt",
     title: "Prompt Engineering",
-    description: "เรียนรู้วิธีสื่อสารกับ Claude อย่างมีประสิทธิภาพ ตั้งแต่พื้นฐานจนถึงเทคนิคขั้นสูง",
+    description: "เรียนรู้วิธีสื่อสารกับ Claude อย่างมีประสิทธิภาพ ตั้งแต่พื้นฐานจนถึงเทคนิคขั้นสูง รวมถึงตัวอย่างสำหรับงาน Marketing และ Content",
     icon: "✍️",
     gradient: "from-blue-500 to-cyan-600",
-    estimatedTime: "25 นาที",
+    estimatedTime: "33 นาที",
     difficulty: "beginner",
     lessons: [
       { id: "anatomy", title: "กายวิภาค Prompt", duration: "8 นาที", description: "System prompt, User prompt, Context" },
       { id: "techniques", title: "เทคนิคการเขียน Prompt", duration: "10 นาที", description: "Chain-of-thought, Few-shot, Role prompting" },
       { id: "practice", title: "ฝึกเขียน Prompt", duration: "7 นาที", description: "Workshop ลองเขียนจริง" },
+      { id: "marketing", title: "Prompt สำหรับสาย Marketing & Content", duration: "8 นาที", description: "ตัวอย่าง prompt พร้อมใช้สำหรับงาน content, โฆษณา และโซเชียล" },
     ],
   },
   {
